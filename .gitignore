@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Training outputs and logs
+output/
+detection/output/
+logs/
+*.events
+*.pth
+*.pth.tar
+worklog.txt
+
+# Datasets and downloaded checkpoints
+data/
+download_ckpts/
+pretrained/
+detection/pretrained/
+detection/datasets/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

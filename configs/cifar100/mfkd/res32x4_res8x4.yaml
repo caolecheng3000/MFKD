@@ -1,0 +1,28 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "mfkd,res32x4,res8x4"
+  PROJECT: "cifar100_baselines"
+DISTILLER:
+  TYPE: "MFKD"
+  TEACHER: "resnet32x4"
+  STUDENT: "resnet8x4"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_COSINE: True
+  LR_COSINE_MIN: 0.0
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+MFKD:
+  CE_WEIGHT: 1.0
+  TAU_L: 4.0
+  TAU_F: 2.0
+  ALPHA: 80.0
+  BETA: 1.0
+  LAMBDA: 8.0
+  WARMUP_EPOCHS: 20
+  PROTO_MOMENTUM: 0.99
+LOG:
+  WANDB: False

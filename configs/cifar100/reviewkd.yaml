@@ -1,0 +1,31 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "reviewkd,res32x4,wrn_40_2"
+  PROJECT: "cifar100_baselines"
+DISTILLER:
+  TYPE: "REVIEWKD"
+  TEACHER: "resnet32x4"
+  STUDENT: "wrn_40_2"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+REVIEWKD:
+  CE_WEIGHT: 1.0
+  REVIEWKD_WEIGHT: 5.0
+  WARMUP_EPOCHS: 1
+  SHAPES: [1, 8, 16, 32]
+  OUT_SHAPES: [1, 8, 16, 32]
+  IN_CHANNELS: [32, 64, 128, 128]
+  OUT_CHANNELS: [64, 128, 256, 256]
+  STU_PREACT: True
+  MAX_MID_CHANNEL: 512
+
+
+
+# CUDA_VISIBLE_DEVICES=3 python3 tools/train.py --cfg configs/cifar100/reviewkd.yaml

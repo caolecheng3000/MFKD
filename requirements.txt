@@ -1,0 +1,26 @@
+# --- Classification toolkit (tools/train.py, tools/eval.py) ---
+#
+# Install torch and torchvision first, matching your CUDA version, e.g.
+#   pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 \
+#       -f https://download.pytorch.org/whl/torch_stable.html
+#
+# Then install the remaining dependencies:
+numpy
+scipy
+Pillow
+yacs
+tqdm
+tensorboardX
+tensorboard-logger==0.1.0
+wandb
+
+# --- Used by tools/visualizations/ ---
+matplotlib
+seaborn
+scikit-learn
+
+# --- Detection and instance segmentation (detection/) ---
+# Requires Detectron2, which is not on PyPI and must be installed from source:
+#   https://github.com/facebookresearch/detectron2
+# Detectron2 brings in fvcore and pycocotools; see detection/README.md for the
+# torch/torchvision versions this code was tested against.

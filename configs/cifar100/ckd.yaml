@@ -1,0 +1,25 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "ckd,res32x4,res8x4"
+  PROJECT: "cifar100_baselines"
+DISTILLER:
+  TYPE: "CKD"
+  TEACHER: "resnet32x4"
+  STUDENT: "resnet8x4"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 480
+  LR: 0.05
+  LR_COSINE: True
+  LR_COSINE_MIN: 0.0
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+CKD:
+  CE_WEIGHT: 1.0
+  CL_WEIGHT: 100.0
+  TEMPERATURE: 1.0
+
+LOG:
+  WANDB : False
+
